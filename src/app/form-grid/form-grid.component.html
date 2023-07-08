@@ -1,0 +1,125 @@
+<ng-container *ngIf="userData?.length">
+    <h2 style="color: brown;">User Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Date of birth</th>
+          <th>Email</th>
+          <th>Phonenumber</th>
+          <th>Proof type</th>
+          <th>Idnumber</th>
+          <th>Addr1</th>
+          <th>Addr2</th>
+          <th>Addr3</th>
+          <th>Landmark</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Nominee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of userData">
+          <td>{{ data.firstName }}</td>
+          <td>{{ data.lastName }}</td>
+          <td>{{ data.dob }}</td>
+          <td>{{ data.email }}</td>
+          <td>{{ data.phoneNumber }}</td>
+          <td>{{ data.proofType }}</td>
+          <td>{{ data.idNumber }}</td>
+          <td>{{ data.addr1 }}</td>
+          <td>{{ data.addr2 }}</td>
+          <td>{{ data.addr3 }}</td>
+          <td>{{ data.landmark }}</td>
+          <td>{{ data.city }}</td>
+          <td>{{ data.state }}</td>
+          <td>{{data.nominee}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <ng-container *ngIf="nomineeData?.length">
+    <h2 style="color: brown;">nominee Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Date of birth</th>
+          <th>Email</th>
+          <th>Phonenumber</th>
+          <th>Proof type</th>
+          <th>Idnumber</th>
+          <th>Addr1</th>
+          <th>Addr2</th>
+          <th>Addr3</th>
+          <th>Landmark</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Nominee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of nomineeData">
+          <td>{{ data.firstName }}</td>
+          <td>{{ data.lastName }}</td>
+          <td>{{ data.dob }}</td>
+          <td>{{ data.email }}</td>
+          <td>{{ data.phoneNumber }}</td>
+          <td>{{ data.proofType }}</td>
+          <td>{{ data.idNumber }}</td>
+          <td>{{ data.addr1 }}</td>
+          <td>{{ data.addr2 }}</td>
+          <td>{{ data.addr3 }}</td>
+          <td>{{ data.landmark }}</td>
+          <td>{{ data.city }}</td>
+          <td>{{ data.state }}</td>
+          <td>{{data.nominee}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <ng-container *ngIf="guardianData?.length">
+    <h2 style="color: brown;">guardian Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Date of birth</th>
+          <th>Email</th>
+          <th>Phonenumber</th>
+          <th>Proof type</th>
+          <th>Idnumber</th>
+          <th>Addr1</th>
+          <th>Addr2</th>
+          <th>Addr3</th>
+          <th>Landmark</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Nominee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of guardianData">
+          <td>{{ data.firstName }}</td>
+          <td>{{ data.lastName }}</td>
+          <td>{{ data.dob }}</td>
+          <td>{{ data.email }}</td>
+          <td>{{ data.phoneNumber }}</td>
+          <td>{{ data.proofType }}</td>
+          <td>{{ data.idNumber }}</td>
+          <td>{{ data.addr1 }}</td>
+          <td>{{ data.addr2 }}</td>
+          <td>{{ data.addr3 }}</td>
+          <td>{{ data.landmark }}</td>
+          <td>{{ data.city }}</td>
+          <td>{{ data.state }}</td>
+          <td>{{data.nominee}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  
+  <router-outlet></router-outlet>

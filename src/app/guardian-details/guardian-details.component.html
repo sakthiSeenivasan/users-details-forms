@@ -1,0 +1,110 @@
+<p id="guardian"> guardian Details:</p>
+<div class="container">
+    <div class="centered-form">
+      <form [formGroup]="guardianForm">
+        <div>
+          <label for="firstName">First name<span>*</span></label>
+          <input type="text" id="firstName" style="margin-left: 33px;" formControlName="firstName" required>
+          <div *ngIf=" guardianForm.get('firstName')?.touched && guardianForm.get('firstName')?.dirty" class="error-message">
+            <span *ngIf="guardianForm.get('firstName')?.errors?.['required']">First Name is required.</span>
+          </div>
+        </div>
+        <br>
+        <div>
+          <label for="firstName">Last name<span>*</span></label>
+          <input type="text" id="lastName" style="margin-left: 35px;" formControlName="lastName" required>
+          <div *ngIf=" guardianForm.get('lastName')?.touched && guardianForm.get('lastName')?.dirty" class="error-message">
+            <span *ngIf="guardianForm.get('lastName')?.errors?.['required']">Last Name is required.</span>
+          </div>
+        </div>
+        <br>
+        <div>
+          <label for="dob">Date of birth<span>*</span></label>
+          <input type="date" id="dob" style="margin-left: 23px;width: 176px" formControlName="dob" required>
+          <div *ngIf="guardianForm.get('dob')?.touched  && guardianForm.get('dob')?.dirty">
+            <span *ngIf="guardianForm.get('dob')?.errors?.['required']" style="margin-left: 99px;">Date of Birth is required.</span>
+            <span *ngIf="guardianForm.get('dob')?.errors?.['invalidAge']" style="margin-left: 99px;">Age must be at least 18.</span>
+          </div>
+        </div>
+        <br>
+        <div>
+          <label for="email">Email</label>
+          <input type="text" style="margin-left: 72px;" id="email" formControlName="email">
+        </div>
+        <br>
+        <div>
+          <label for="phoneNumber">Mobile number<span>*</span></label>
+          <input type="text" id="phoneNumber" formControlName="phoneNumber" required>
+          <div *ngIf="guardianForm.get('phoneNumber')?.touched && guardianForm.get('phoneNumber')?.dirty" class="error-message">
+            <span *ngIf="guardianForm.get('phoneNumber')?.errors?.['required']">Mobile Number is required.</span>
+          </div>
+        </div>
+        <br>
+        <div>
+          <label for="proofType"> Id proof type<span>*</span></label>
+          <select formControlName="proofType" style="margin-left: 16px;width: 176px;" id="proofType" required>
+            <option value="" disabled selected>Select your proofType</option>
+            <option value="adhar"> aadhaar</option>
+            <option value="pan"> pan </option>
+            <option value="passport">passport</option>
+            <option value="driving license">driving license</option>
+            <option value="voter id">voter id</option>
+          </select>
+          <div *ngIf="guardianForm.get('proofType')?.touched && guardianForm.get('proofType')?.dirty " class="error-message">
+            <span *ngIf="guardianForm.get('proofType')?.errors?.['required']">Id prooftype is required.</span>
+          </div>
+        </div>
+        <br>
+        <div>
+          <label for="idNumber">ID number<span>*</span></label>
+          <input type="text" id="idNumber" style="margin-left: 30px;" formControlName="idNumber" required>
+          <div *ngIf=" guardianForm.get('idNumber')?.touched  && guardianForm.get('idNumber')?.dirty" class="error-message">
+            <span *ngIf="guardianForm.get('idNumber')?.errors?.['required']">ID Number is required.</span>
+          </div>
+        </div>
+        <br>
+        <div>
+          <label for="addr1">Address line 1<span>*</span></label>
+          <input type="text" id="addr1" style="margin-left: 8px;" formControlName="addr1">
+          <div *ngIf="guardianForm.get('addr1')?.touched  && guardianForm.get('addr1')?.dirty" class="error-message">
+            <span *ngIf="guardianForm.get('addr1')?.errors?.['required']">Address line 1 is required.</span>
+          </div>
+        </div>
+        <br>
+        <div>
+          <label for="addr2">Address line 2</label>
+          <input type="text" id="addr2" style="margin-left: 16px;" formControlName="addr2">
+        </div>
+        <br>
+        <div>
+          <label for="addr3">Address line 3</label>
+          <input type="text" id="addr3" style="margin-left: 16px;" formControlName="addr3">
+        </div>
+        <br>
+        <div>
+          <label for=" landmark"> Landmark</label>
+          <input type="text" id="landmark" style="margin-left: 42px;" formControlName="landmark">
+        </div>
+        <br>
+        <div>
+          <label for="city">City<span>*</span></label>
+          <input type="text" id="city" style="margin-left: 71px;" formControlName="city" required>
+          <div *ngIf="guardianForm.get('city')?.touched && guardianForm.get('city')?.dirty" class="error-message">
+            <span *ngIf="guardianForm.get('city')?.errors?.['required']">city is required.</span>
+          </div>
+        </div>
+        <br>
+        <div>
+          <label for="state">State<span>*</span></label>
+          <input type="text" id="state" style="margin-left: 65px;" formControlName="state" required>
+          <div *ngIf="guardianForm.get('state')?.touched && guardianForm.get('city')?.dirty" class="error-message">
+            <span *ngIf="guardianForm.get('state')?.errors?.['required']">state is required.</span>
+          </div>
+        </div>
+        <br>
+        <button type="submit" class="submit-form" [disabled]="guardianForm.invalid" (click)="submitGuardian()">Save</button>
+      </form>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  
